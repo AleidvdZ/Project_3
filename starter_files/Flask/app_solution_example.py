@@ -1,4 +1,6 @@
 # Import the dependencies.
+import numpy as np
+
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -35,24 +37,35 @@ app = Flask(__name__)
 #     app.run()
 
 # @app.route("/api/v1.0/banks")
-def banks():
+def names():
     # Create our session (link) from Python to the DB
     session = Session(engine)
 
-    """Return a list of bank names"""
-    # Query all bankds
+    """Return a list of all bank names"""
+    # Query all passengers
     results = session.query(Bankdata.name).all()
 
     session.close()
 
-    # Create a dictionary from the row data and append to a list of all_passengers
-    all_banks = []
-    for name in results:
-        banks_dict = {}
-        banks_dict["name"] = name
-        all_banks.append(banks_dict)
+    # Convert list of tuples into normal list
+    all_banks = list(np.ravel(results))
+
+    return jsonify(all_banks)
+                   
+   # """Return a list of bank names"""
+   #  # Query all bankds
+   #  results = session.query(Bankdata.name).all()
+
+   #  session.close()
+    
+   # Create a dictionary from the row data and append to a list of all_passengers
+   #  all_banks = []
+   #  for name in results:
+   #      banks_dict = {}
+   #      banks_dict["name"] = name
+   #      all_banks.append(banks_dict)
    
-        print(all_banks)
+   #      print(all_banks)
 
    #  return jsonify(all_banks)
    
