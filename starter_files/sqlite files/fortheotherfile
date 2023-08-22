@@ -22,6 +22,8 @@ file = open('banklist.csv')
 
 contents = csv.reader(file)
 
+next(contents)
+
 insert_records = "INSERT INTO banklist (bankname, city, state,\
                 cert, acquiring_institution, closing_date,\
                     fund)\

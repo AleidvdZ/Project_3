@@ -1,13 +1,13 @@
 import csv
 import sqlite3
 
-connection = sqlite3.connect('junk.sqlite')
+connection = sqlite3.connect('bankdata.sqlite')
 
 cursor = connection.cursor()
 
 create_table = '''CREATE TABLE bankdata(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    cert REAL,
+    cert INTEGER,
     chclass1 VARCHAR,
     city_and_state VARCHAR,
     cost REAL,
@@ -15,8 +15,8 @@ create_table = '''CREATE TABLE bankdata(
     fin REAL,
     identification REAL,
     name VARCHAR,
-    qbfasset REAL,
-    qbfdep REAL,
+    qbfasset INTEGER,
+    qbfdep INTEGER,
     restype VARCHAR,
     restype1 VARCHAR,
     savr VARCHAR
@@ -27,6 +27,9 @@ cursor.execute(create_table)
 file = open('bank-data.csv')
 
 contents = csv.reader(file)
+
+next(contents)
+
 
 insert_records = "INSERT INTO bankdata (cert, chclass1, city_and_state,\
                 cost, faildate, fin, identification, name, \
@@ -44,3 +47,6 @@ for r in rows:
 connection.commit()
 
 connection.close()
+
+
+
