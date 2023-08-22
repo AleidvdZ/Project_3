@@ -1,0 +1,40 @@
+import csv
+import sqlite3
+
+connection = sqlite3.connect('tings.sqlite')
+
+cursor = connection.cursor()
+
+create_table = '''CREATE TABLE banklist(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    bankname VARCHAR,
+    city VARCHAR,
+    state VARCHAR,
+    cert REAL,
+    acquiring_institution VARCHAR,
+    closing_date DATE,
+    fund INTEGER
+);'''
+
+cursor.execute(create_table)
+
+file = open('banklist.csv')
+
+contents = csv.reader(file)
+
+insert_records = "INSERT INTO banklist (bankname, city, state,\
+                cert, acquiring_institution, closing_date,\
+                    fund)\
+                 VALUES(?,?,?,?,?,?,?)"
+
+cursor.executemany(insert_records, contents)
+
+select_all = "SELECT * FROM banklist"
+rows = cursor.execute(select_all).fetchall()
+
+for r in rows:
+    print(r)
+
+connection.commit()
+
+connection.close()

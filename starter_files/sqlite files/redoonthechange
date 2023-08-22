@@ -1,0 +1,46 @@
+import csv
+import sqlite3
+
+connection = sqlite3.connect('junk.sqlite')
+
+cursor = connection.cursor()
+
+create_table = '''CREATE TABLE bankdata(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cert REAL,
+    chclass1 VARCHAR,
+    city_and_state VARCHAR,
+    cost REAL,
+    faildate DATE,
+    fin REAL,
+    identification REAL,
+    name VARCHAR,
+    qbfasset REAL,
+    qbfdep REAL,
+    restype VARCHAR,
+    restype1 VARCHAR,
+    savr VARCHAR
+);'''
+
+cursor.execute(create_table)
+
+file = open('bank-data.csv')
+
+contents = csv.reader(file)
+
+insert_records = "INSERT INTO bankdata (cert, chclass1, city_and_state,\
+                cost, faildate, fin, identification, name, \
+                    qbfasset, qbfdep, restype, restype1, savr)\
+                 VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"
+
+cursor.executemany(insert_records, contents)
+
+select_all = "SELECT * FROM bankdata"
+rows = cursor.execute(select_all).fetchall()
+
+for r in rows:
+    print(r)
+
+connection.commit()
+
+connection.close()
