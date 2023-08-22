@@ -14,6 +14,9 @@ Public data regarding bank failure exist and are readily accessible.  The source
 
 ## Timeline of Activities/Things Learned
 0815 Created and submitted proposal for project  
+0817 Research and discussed requirments and how to achieve.  Realized that sqlite would be easier to use for flask.  
+0820 Team check-in. LAG created sqlite files.  
+0821 Built flask query, troubleshot need for primary key to utiize flask, identified order of events (to a point).  
 
 ## Conclusion
 
@@ -23,10 +26,18 @@ Public data regarding bank failure exist and are readily accessible.  The source
 ## Other Information  
 ### Installing
 The following applications are necessary to manage, clean the data, and create visualizations for the project.
+* sqlite3
+* sqlalchemy
+* Flask
+* D3 (need to add url)
+* add others as id'd
 
 ### Sources
+#### Sources for data  
 Link: https://catalog.data.gov/dataset/fdic-failed-bank-list  
 Link: https://banks.data.fdic.gov/explore/failures?aggReport=detail&displayFields=NAME%2CCERT%2CFIN%2CCITYST%2CFAILDATE%2CSAVR%2CRESTYPE%2CCOST%2CRESTYPE1%2CCHCLASS1%2CQBFDEP%2CQBFASSET&endFailYear=2023&sortField=FAILDATE&sortOrder=desc&startFailYear=2012  
+
+#### Sources supporting project  
 
 ### Contributing
 Contributors: Louis Alejandro Gonzalez, Garrett Steenwyk, Aleid van der Zel
