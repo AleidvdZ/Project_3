@@ -53,10 +53,10 @@
                 <p>Use the interactive charts below to explore the dataset</p>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row"> -->
             <!-- The div for the map -->
-            <div id="map"></div>
-                </div>
+            <!-- <div id="map"></div>
+                </div> -->
         </div>
         <!-- Chart.js code -->
       <div class="chartCard">
@@ -70,8 +70,13 @@
           <button onclick="Chart4()">3 bars; split Medium between 100k and 1M</button>
             </div>
           </div>
-          <canvas id="pieChart" width="400" height="400"></canvas>
-      
+          <div class="chartCard">
+            <div class="chartBox">
+              <canvas id="pieChart" width="400" height="400"></canvas>
+                </div>
+              </div>
+         
+              <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
         <!-- <div class="col-md-5">
             <div id="bar"></div>
           </div>
@@ -86,12 +91,12 @@
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="../static/js/script.js"></script>
+<script src="../static/js/app.js"></script>
 <script src="../static/js/chart.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+
   
 </body>
 
 </html>
 
-<script src="{{ url_for('static', filename='js/app.js') }}"></script>   
+<!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script>    -->
