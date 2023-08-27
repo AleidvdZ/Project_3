@@ -89,8 +89,31 @@ const bankdataUrl = "http://127.0.0.1:5000/api/v1.0/bankdata";
 //dropbox i think can live here.
 
 
-//chart.js will need to be placed here. Only
-
+const config = {
+  type: 'pie',
+  data: data,
+};
+const data = {
+  labels: [
+    'Bank1',
+    'Bank2',
+    'Bank3',
+    'Bank4',
+    'Bank5',
+  ],
+  datasets: [{
+    label: 'Top Five Banks Buying Everything',
+    data: [nameCount],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(25, 205, 86)',
+      'rgb(255, 180, 80)',
+      'rgb(140, 25, 32)'
+    ],
+    hoverOffset: 4
+  }]
+};
 // Call the function when needed
 fetchDataFromRoutes();
 
