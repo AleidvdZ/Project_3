@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project 3</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+
+  <!-- Leaflet JavaScript code -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+  <!-- Chart.js styling -->
+  <style>
+    .chartMenu p {
+    padding: 10px;
+    font-size: 20px;
+    }
+    .chartCard {
+      width: 100vw;
+      height: calc(100vh - 40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chartBox {
+      width: 700px;
+      padding: 20px;
+      border-radius: 20px;
+      border: solid 3px rgba(54, 162, 235, 1);
+      background: white;
+    }
+  </style>
+  <!-- Our CSS not sure if we need a separate css as there are css pulled in above -->
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+</head>
+
+<body>
+    <!-- The div for the heading -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 jumbotron text-center">
+                <h1>Bank Failures Drill Down</h1>
+                <p>Use the interactive charts below to explore the dataset</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- The div for the map -->
+            <div id="map"></div>
+                </div>
+        </div>
+        <!-- Chart.js code -->
+      <div class="chartCard">
+        <div class="chartBox">
+          <canvas id="myChart"></canvas>
+          <!-- Buttons to change graph -->
+          <button onclick="Chart1()">2 bars</button>
+          <button onclick="Chart5()">2 bars split at 50K</button>
+          <button onclick="Chart2()">3 bars; split Medium between 1M and 100M</button>
+          <button onclick="Chart3()">3 bars; split Medium between 100K and 100M</button>
+          <button onclick="Chart4()">3 bars; split Medium between 100k and 1M</button>
+            </div>
+          </div>
+          <canvas id="pieChart" width="400" height="400"></canvas>
+      
+        <!-- <div class="col-md-5">
+            <div id="bar"></div>
+          </div>
+        </div>          
+        <div class="row">
+          <div class="col-md-12">
+            <div id="bubble"></div>
+          </div>
+        </div> -->
+    </div>
+    
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="../static/js/script.js"></script>
+<script src="../static/js/chart.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+  
+</body>
+
+</html>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>   
