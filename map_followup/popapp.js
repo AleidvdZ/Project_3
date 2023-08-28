@@ -339,7 +339,7 @@ let trace2 = {
 };
 
 // Create data array
-let data = [trace1, trace2];
+let data1 = [trace1, trace2];
 
 // Apply a title to the layout
 let layout = {
@@ -347,4 +347,4 @@ let layout = {
 };
 
 // Render the plot to the div tag with id "plot"
-Plotly.newPlot("popPlot", data, layout);
+Plotly.newPlot("popPlot", data1, layout);
