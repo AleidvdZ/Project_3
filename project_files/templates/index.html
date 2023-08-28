@@ -18,8 +18,10 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
+
   <!-- colorpalette for doughnut styling -->
-  <script src="https://raw.githubusercontent.com/google/palette.js/master/palette.js"></script>  
+  <script src="https://raw.githubusercontent.com/google/palette.js/master/palette.js"></script>
+
   <!-- Chart.js styling -->
   <style>
     .chartMenu p {
@@ -58,7 +60,7 @@
       <!-- Chart.js code -->
     <div class="chartCard">
       <div class="chartBox">
-        <canvas id="myChart"></canvas>
+        <canvas id="myChart" width="400" height="300"></canvas>
           <!-- Buttons to change graph -->
           <button onclick="Chart1()">2 bars</button>
           <button onclick="Chart5()">2 bars split at 50K</button>
@@ -67,23 +69,21 @@
           <button onclick="Chart4()">3 bars; split Medium between 100k and 1M</button>
           </div>
         </div>
-    <div class="chartCard">
-      <div class="chartBox">
-        <select id="chartType">
-            <option value="pie">Pie Chart</option>
-            <option value="doughnut">Doughnut Chart</option>
-          </select>
-          <canvas id="pieChart" width="600" height="600"></canvas>
-          <canvas id="doughnutChart" width="1200" height="1200"></canvas> 
-      </div>       
-    </div>
-        
-    </div>
+        <div class="chartCard">
+            <div class="chartBox">
+              <select id="chartType">
+                  <option value="pie">Pie Chart</option>
+                  <option value="doughnut">Doughnut Chart</option>
+                </select>
+                <canvas id="pieChart" width="400" height="300"></canvas>
+                <canvas id="doughnutChart" width="400" height="300"></canvas> 
+            </div> 
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>      
+          </div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="../static/js/app.js"></script>
     <script src="../static/js/chart.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>  -->
 </body>
 </html>

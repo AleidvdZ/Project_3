@@ -1,3 +1,5 @@
+const banklistUrl = "http://127.0.0.1:5000/api/v1.0/banklist";
+
 // app.js
 
 let topValues, topCounts, allValues, allCounts; // Define these variables at the top for scope
@@ -130,3 +132,5 @@ function clearCharts() {
   pieCtx.clearRect(0, 0, pieChartCanvas.width, pieChartCanvas.height);
   doughnutCtx.clearRect(0, 0, doughnutChartCanvas.width, doughnutChartCanvas.height);
 }
+
+  
