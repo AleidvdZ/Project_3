@@ -21,9 +21,13 @@ For the years covered in the data how many closures were there per year?  Is the
 0820 Team check-in. LAG created sqlite files.  
 0821 Built flask query, troubleshot need for primary key to utiize flask, identified order of events (to a point).   
 0822 LAG recreated sqlite files with primary key. AvdZ fixed/tested Flask documentation to pull in both database files.  GS looked at documentation for graphing options and recommended chart.js. Team decided to change question 1 as FDIC already has beautiful graphs addressing time.  Team discussed a histogram that looks at assets distribution among the banks when they failed.  
-0826 LAG created sorting code and setup for pie chart, GS worked on bar chart around assets of the banks at time of closure, AvdZ worked on html, basics for a map.
+0826 LAG created sorting code and setup for pie chart, GS worked on bar chart around assets of the banks at time of closure, AvdZ worked on html, basics for a map.  
+0827 Project mostly completed with contribution from all.
 
-## Conclusion
+## Conclusions  
+* Georgia had the most bank closures over the past 20+ years  with 93, followed by Florida (76) and Illinois (69)  
+* Majority of banks close with less than $1B in assets, and those with more than $100B are of significant concern.
+* State bank and Trust bought 12 properties in Georgia, and one in Illinois. Interesting to see that it was clustered in one state and have an outlier so far away.
 
 ### Link to Presentation
 
@@ -39,7 +43,6 @@ The following applications are necessary to manage, clean the data, and create v
 * Leaflet CSS ("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css")
 * Leaflet JS ("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 * tilelayer attributed in JS file
-* add others as id'd
 
 ### Sources
 #### Sources for data  
