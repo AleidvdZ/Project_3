@@ -191,9 +191,7 @@ let states =
   },
   {
     state:"Ohio",
-    location: [42.1497,-74.9384],
-    latitude:40.3736,
-    longitude:-82.7755,
+    location: [40.3736,-82.7755],
     banks_closed: 9
   },
   {
